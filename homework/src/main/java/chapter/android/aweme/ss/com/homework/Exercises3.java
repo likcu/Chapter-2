@@ -3,6 +3,14 @@ package chapter.android.aweme.ss.com.homework;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+import chapter.android.aweme.ss.com.homework.model.Message;
+import chapter.android.aweme.ss.com.homework.model.PullParser;
 
 /**
  * 大作业:实现一个抖音消息页面,
@@ -35,6 +43,20 @@ public class Exercises3 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //InputStream assetInput = null;
+//        try {
+//            assetInput = getAssets().open("data.xml");
+//            List<Message> messages = PullParser.pull2xml(assetInput);
+//            for(Message message: messages){
+//                System.out.println(message);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        setContentView(R.layout.im_list_item);
+
     }
 
 }

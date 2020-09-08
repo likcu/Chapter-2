@@ -29,7 +29,7 @@
         <ImageView
             android:id="@+id/robot_notice"
             style="@style/IMVerifyBdage"
-            tools:visibility="visible" />
+            android:visibility="visible" />
     </FrameLayout>
 
 

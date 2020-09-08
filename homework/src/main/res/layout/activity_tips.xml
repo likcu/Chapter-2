@@ -10,7 +10,8 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="70dp"
+        android:background="#161823">
 
         <TextView
             android:layout_width="wrap_content"
@@ -18,9 +19,15 @@
             android:layout_centerInParent="true"
             android:fontFamily="sans-serif"
             android:text="消息"
-            android:textColor="#ffffff"
+            android:textColor="#FFFFFF"
             android:textSize="18sp" />
     </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/info_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:info_bar="@layout/info_bar_list" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_list"
