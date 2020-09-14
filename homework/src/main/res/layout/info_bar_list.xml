@@ -1,61 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="106dp"
+    android:orientation="horizontal"
     tools:background="@color/colorBackground"
     android:background="@drawable/recycler_item_selector">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            tools:background="@color/colorBackground"
+            android:background="@drawable/recycler_item_selector">
 
-        <ImageView
-            android:id="@+id/fans_icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/icon_notice_fans"/>
+                <ImageView
+                    android:id="@+id/fans_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_notice_fans"/>
 
-        <TextView
-            android:id="@+id/info_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@+id/fans_icon"
-            android:text="粉丝" />
+                <TextView
+                    android:id="@+id/info_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/fans_icon"
+                    android:layout_marginLeft="30dp"
+                    android:text="粉丝" />
 
-        <ImageView
-            android:id="@+id/like_icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/fans_icon"
-            android:src="@drawable/icon_notice_fans" />
+        </RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            tools:background="@color/colorBackground"
+            android:background="@drawable/recycler_item_selector">
 
-        <TextView
-            android:id="@+id/like_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="赞" />
+                <ImageView
+                    android:id="@+id/like_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_notice_like"/>
 
-        <ImageView
-            android:id="@+id/people_icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/icon_notice_fans"/>
+                <TextView
+                    android:id="@+id/like_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp"
+                    android:layout_below="@+id/like_icon"
+                    android:layout_marginLeft="35dp"
+                    android:text="赞" />
 
-        <TextView
-            android:id="@+id/people_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="｜@我的" />
+        </RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            tools:background="@color/colorBackground"
+            android:background="@drawable/recycler_item_selector">
 
-        <ImageView
-            android:id="@+id/comment_icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/icon_notice_fans"/>
+                <ImageView
+                    android:id="@+id/people_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/icon_notice_people"/>
 
-        <TextView
-            android:id="@+id/comment_title"
-            android:layout_width="42dp"
-            android:layout_height="match_parent"
-            android:text="评论" />
+                <TextView
+                    android:id="@+id/people_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/people_icon"
+                    android:layout_marginLeft="30dp"
+                    android:text="我的" />
+
+        </RelativeLayout>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            tools:background="@color/colorBackground"
+            android:background="@drawable/recycler_item_selector"
+            android:id="@+id/parent">
+
+                <ImageView
+                    android:id="@+id/comment_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_notice_comment"/>
+
+                <TextView
+                    android:id="@+id/comment_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/comment_icon"
+                    android:layout_marginLeft="30dp"
+                    android:text="评论" />
+
+        </RelativeLayout>
+
+</LinearLayout>
 
 
-</RelativeLayout>
