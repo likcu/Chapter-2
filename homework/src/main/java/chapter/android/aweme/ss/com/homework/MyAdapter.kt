@@ -4,37 +4,51 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import chapter.android.aweme.ss.com.homework.model.Message
-import chapter.android.aweme.ss.com.homework.widget.CircleImageView
+import chapter.android.aweme.ss.com.homework.model.InfoBarItem
 import kotlinx.android.synthetic.main.im_list_item.view.*
-import java.util.zip.Inflater
 
-class MyAdapter : RecyclerView.Adapter<MyAdapter.MessageViewHolder>() {
+class MyAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var list: List<Message> = ArrayList()
+    private var infoBarList: List<InfoBarItem> = ArrayList()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-        return MessageViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.im_list_item,parent,false)
-        )
+    override fun getItemViewType(position: Int): Int {
+        if(infoBarList.isEmpty()) return 0
+        return 1
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        if(viewType == 1){
+            return MessageViewHolder(
+                    LayoutInflater.from(parent.context).inflate(R.layout.im_list_item,parent,false)
+            )
+        }
+        return InfoBarViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.info_bar_list,parent,false))
+    }
 
-    override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
+    override fun getItemCount(): Int = list.size + 1
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         //when having different kind of viewHolder
         when(holder){
             is MessageViewHolder -> {
-                holder.bind(list.get(position))
+                holder.bind(list.get(position-1))//cause infobarlist is in the front position
+            }
+            is InfoBarViewHolder -> {
+                holder.bind(infoBarList)
             }
         }
     }
 
-    fun submitList(userList: List<Message>){
+    fun submitMessageList(userList: List<Message>){
         list = userList
     }
+    fun submitInfoBarList(infoList: List<InfoBarItem>){
+        infoBarList = infoList
+    }
 
+    //MessageViewHolder for message list
     class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         val userIcon = itemView.iv_avatar
@@ -57,9 +71,17 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MessageViewHolder>() {
                 "TYPE_STRANGER" -> userIcon.setImageResource(R.drawable.session_stranger)
                 "TYPE_USER" -> userIcon.setImageResource(R.drawable.icon_girl)
             }
+        }
+    }
+
+    //info bar viewholder above the message list
+    class InfoBarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+        fun bind(infoItemList: List<InfoBarItem>){
 
         }
     }
+
 
 }
 
